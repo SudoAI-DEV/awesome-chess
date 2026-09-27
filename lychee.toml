@@ -21,4 +21,8 @@ exclude = [
   "^https?://(www\\.)?bilibili\\.com",
   "^https?://space\\.bilibili\\.com",
   "^https?://discord\\.(gg|com)",
+  "^https?://(www\\.)?talkchess\\.com",
+  "^https?://(www\\.)?chessstrategyonline\\.com",
+  # This repository's own pages depend on repo settings (issues, default branch)
+  "^https://github\\.com/SudoAI-DEV/awesome-chess",
 ]
