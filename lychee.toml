@@ -1,0 +1,29 @@
+# Configuration for https://github.com/lycheeverse/lychee
+max_retries = 4
+retry_wait_time = 10
+timeout = 60
+max_concurrency = 8
+accept = ["100..=103", "200..=299", "403", "406", "429", "999"]
+exclude_path = [".github"]
+exclude = [
+  # Anchor-only and local links
+  "^#",
+  "^https://link$",
+  # Sites that routinely block automated requests
+  "^https?://(www\\.)?chess\\.com",
+  "^https?://(www\\.)?chessable\\.com",
+  "^https?://(www\\.)?reddit\\.com",
+  "^https?://(www\\.)?twitter\\.com",
+  "^https?://(www\\.)?x\\.com",
+  "^https?://(www\\.)?amazon\\.",
+  "^https?://(www\\.)?imdb\\.com",
+  "^https?://(www\\.)?netflix\\.com",
+  "^https?://(www\\.)?bilibili\\.com",
+  "^https?://space\\.bilibili\\.com",
+  "^https?://discord\\.(gg|com)",
+  "^https?://(www\\.)?talkchess\\.com",
+  "^https?://(www\\.)?chessstrategyonline\\.com",
+  "^https?://(ratings|handbook)\\.fide\\.com",
+  # This repository's own pages depend on repo settings (issues, default branch)
+  "^https://github\\.com/SudoAI-DEV/awesome-chess",
+]

@@ -1,0 +1,30 @@
+name: "🔗 Report a broken or outdated link / 报告失效或过时链接"
+description: Report a dead link, a moved project, or an inaccurate description. / 报告死链、项目迁移或描述错误。
+title: "[Broken link] "
+labels: ["broken-link"]
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: Entry / 条目
+      placeholder: "- [Example](https://example.com) - ..."
+    validations:
+      required: true
+  - type: dropdown
+    id: problem
+    attributes:
+      label: Problem / 问题类型
+      options:
+        - Link is dead / 链接失效
+        - Project moved or renamed / 项目迁移或改名
+        - Project is archived or unmaintained / 项目已归档或停止维护
+        - Description is inaccurate / 描述不准确
+        - Chinese and English versions are out of sync / 中英文版本不一致
+        - Other / 其他
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details / 详细说明
+      description: New URL or suggested fix, if known. / 如有新链接或修改建议请填写。

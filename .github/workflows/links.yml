@@ -1,0 +1,34 @@
+name: Check links
+
+on:
+  pull_request:
+    paths: ["**.md"]
+  schedule:
+    - cron: "0 3 * * 1" # every Monday 03:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check links
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --config lychee.toml README.md README.zh-CN.md CONTRIBUTING.md CONTRIBUTING.zh-CN.md
+          fail: ${{ github.event_name == 'pull_request' }}
+          output: ./lychee/out.md
+
+      - name: Open an issue on scheduled failures
+        if: github.event_name != 'pull_request' && steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "Link checker report / 链接检查报告"
+          content-filepath: ./lychee/out.md
+          labels: broken-link, automated
