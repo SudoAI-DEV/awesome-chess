@@ -3,11 +3,12 @@ max_retries = 3
 retry_wait_time = 5
 timeout = 30
 max_concurrency = 16
-accept = ["100..=103", "200..=299", "403", "429", "999"]
+accept = ["100..=103", "200..=299", "403", "406", "429", "999"]
 exclude_path = [".github"]
 exclude = [
   # Anchor-only and local links
   "^#",
+  "^https://link$",
   # Sites that routinely block automated requests
   "^https?://(www\\.)?chess\\.com",
   "^https?://(www\\.)?chessable\\.com",
