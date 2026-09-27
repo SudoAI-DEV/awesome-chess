@@ -1,8 +1,8 @@
 # Configuration for https://github.com/lycheeverse/lychee
-max_retries = 3
-retry_wait_time = 5
-timeout = 30
-max_concurrency = 16
+max_retries = 4
+retry_wait_time = 10
+timeout = 60
+max_concurrency = 8
 accept = ["100..=103", "200..=299", "403", "406", "429", "999"]
 exclude_path = [".github"]
 exclude = [
