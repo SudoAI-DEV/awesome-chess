@@ -1,0 +1,23 @@
+# Configuration for https://github.com/lycheeverse/lychee
+max_retries = 3
+retry_wait_time = 5
+timeout = 30
+max_concurrency = 16
+accept = ["100..=103", "200..=299", "403", "429", "999"]
+exclude_path = [".github"]
+exclude = [
+  # Anchor-only and local links
+  "^#",
+  # Sites that routinely block automated requests
+  "^https?://(www\\.)?chess\\.com",
+  "^https?://(www\\.)?chessable\\.com",
+  "^https?://(www\\.)?reddit\\.com",
+  "^https?://(www\\.)?twitter\\.com",
+  "^https?://(www\\.)?x\\.com",
+  "^https?://(www\\.)?amazon\\.",
+  "^https?://(www\\.)?imdb\\.com",
+  "^https?://(www\\.)?netflix\\.com",
+  "^https?://(www\\.)?bilibili\\.com",
+  "^https?://space\\.bilibili\\.com",
+  "^https?://discord\\.(gg|com)",
+]

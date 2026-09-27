@@ -1,0 +1,42 @@
+name: "💡 Suggest a resource / 推荐资源"
+description: Suggest a chess resource that should be on the list. / 推荐一个值得收录的国际象棋资源。
+title: "[Suggestion] "
+labels: ["suggestion"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Name / 名称
+      placeholder: Stockfish
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: URL / 链接
+      placeholder: https://github.com/official-stockfish/Stockfish
+    validations:
+      required: true
+  - type: input
+    id: section
+    attributes:
+      label: Section / 分类
+      placeholder: Engines / 引擎
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Why is it awesome? / 推荐理由
+      description: One sentence for the list, plus any context. / 一句话描述，以及其他补充说明。
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist / 检查清单
+      options:
+        - label: I searched the list and open issues; this is not a duplicate. / 我已确认列表和已有 Issue 中没有重复。
+          required: true
+        - label: I am not affiliated with this resource, or I have disclosed my affiliation above. / 我与该资源无利益关系，或已在上方说明。
+          required: false
